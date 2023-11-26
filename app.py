@@ -14,7 +14,7 @@ current_dir = os.getcwd()
 
 class MessageForm(FlaskForm):
     # email = StringField("Enter your email address: ", validators=[DataRequired(), Regexp(r"^[-\w\.\+]+@([-\w]+\.)+[-\w\ ]{2,4}$")])
-    email = EmailField(validators=[Email("Enter a valid Email:)"), DataRequired()])
+    email = EmailField("Enter your email:", validators=[Email("Enter a valid Email:)"), DataRequired()])
     name = StringField("Enter your name: ", validators=[DataRequired()])
     # email = EmailField(validators=[email_validator, DataRequired()])
     message = TextAreaField("Enter your message: ")
@@ -42,7 +42,7 @@ def index():
             output.write(str(user_data))
 
         print(user_data)
-        
+
         return redirect(url_for("thank_you"))
     
     
@@ -57,4 +57,4 @@ def thank_you():
 if __name__ == '__main__':
     from waitress import serve
     serve(app, host="0.0.0.0", port=8080)
-    app.run(host="0.0.0.0", port=8080)
+    # app.run(host="0.0.0.0", port=8080)

@@ -53,6 +53,9 @@ def index():
 def thank_you():
     return render_template("thankyou.html")
 
+@app.route("/signup")
+def signup():
+    return '<h1>Temporary server down</h1>'
 
 if __name__ == '__main__':
     from waitress import serve

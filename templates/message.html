@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Anonymous Message</title>
+</head>
+<body>
+    <H1>Send an Anonymous message to the user!</H1>
+
+    {% block content %}
+    
+    <h3>Please enter your email address:</h3>
+
+    <form method="POST">
+        {{form.hidden_tag()}}
+        <div>
+        {{form.email.label}} 
+        <br> 
+        {{form.email()}}
+    </div>
+
+    <div>
+        {{form.name.label}} 
+        <br> 
+        {{form.name()}}
+    </div>
+
+<fieldset>
+  <legend>Do you want the user to see your name & email:</legend>
+
+  <div>
+    <input type="radio" id="huey" name="drone" value="huey" checked />
+    <label for="huey">Yes</label>
+  </div>
+
+  <div>
+    <input type="radio" id="dewey" name="drone" value="dewey" />
+    <label for="dewey">No</label>
+  </div>
+</fieldset>
+
+        {{form.message.label}} <br> {{form.message()}}
+    </div>
+          <br>
+          <div>
+        {{form.submit()}}
+    </div>
+    </form>
+
+    {% endblock %}
+</body>
+</html>
